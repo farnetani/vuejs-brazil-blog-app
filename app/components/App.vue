@@ -1,15 +1,13 @@
 <template>
   <Page class="ListIndex">
     <ActionBar title="Vue.js Brasil Blog"/>
-    <!-- <GridLayout rows="*" cols="*"> -->
-      <StackLayout>
-        <ListView for="item in items">
-          <v-template>
-            <PostItem :item="item"/>
-          </v-template>
-        </ListView>
-      </StackLayout>
-    <!-- </GridLayout> -->
+    <StackLayout>
+      <ListView for="item in items">
+        <v-template>
+          <PostItem :item="item"/>
+        </v-template>
+      </ListView>
+    </StackLayout>
   </Page>
 </template>
 

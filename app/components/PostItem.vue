@@ -1,5 +1,5 @@
 <template>
-  <StackLayout>
+  <StackLayout @tap="goToDetail(item)">
     <Label
       class="LabelSpacing title"
       width="100%"
@@ -27,13 +27,20 @@
 </template>
 
 <script>
+import PostDetail from './PostDetail'
 import { format } from 'date-fns'
+
 export default {
   name: 'PostItem',
   props: ['item'],
   methods: {
     formatDate (date) {
       return format(date, 'DD/MM/YYYY')
+    },
+    goToDetail (item) {
+      this.$navigateTo(PostDetail, {
+        props: { item }
+      })
     }
   }
 }
@@ -47,7 +54,7 @@ export default {
   padding-right: 40px;
 }
 .title {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 700;
 }
 .date {
